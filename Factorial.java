@@ -9,10 +9,18 @@ class Factorial
 		System.out.println("Enter Any Numnber:");
 		int num1 = scn.nextInt();
 		int facto = 0;
-		for(int i=1; i<=num1; i++)
+		int i = 1;
+		/*for(int i=1; i<=num1; i++)
 		{
 			int fact = i * num1;
 			facto = fact * num1;
+		}
+		System.out.println("Factorial of "+num1+ " is" + facto);*/
+		while(i<=num1)
+		{
+			int fact = i * num1;
+			facto = fact * num1;
+
 		}
 		System.out.println("Factorial of "+num1+ " is" + facto);
 	}
