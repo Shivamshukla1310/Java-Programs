@@ -1,0 +1,33 @@
+Java Methods:-
+---> A method is a block of code that performs a specific task, In Java There are 2 types of methods
+1. User Defined Methods
+2. Standard Library Methods(Built-in Methods)
+
+Syntax:-
+returntype methodname(args(Optional))
+{
+	.
+	.
+	.	
+	Body of the method
+}
+
+---> Here Return type Specifies What type of value a method returns
+	For Ex:- * If a method has int return type then it returns an integer value if the method doesn't return a value its return type is void.
+		 * Method name is an identifier that is used to refer to the particular method in aa program.
+		 * method body It includes the programing statements that are used to perform some task,the method body is enclosed inside the curly braces{}.
+
+Access Modifiers in java:-
+---> the access modifiers are used to set visibility of classes,interfaces,variables,methods,constructurs,setter methods etc.
+NOTE:- You cannot set access modifiers for getter methods.
+Types Of access modifiers
+1.Public
+	When we use methods ,variables,classes as public then we can access them from anywhere,the public access modifiers has no scope restriction.
+2.Protected
+	When Methods and data members are declared as protected, we can access them within the same package as well as from sub classes.
+	NOTE:- We cannot declare classes and interfaces as protected in java
+3.Private
+	When variables,and methods are declared as private,they cannot be accesed outsidde of the class.
+	NOTE:- We cannot declare classes and interfaces as private in java,however the nested classes can be declared as private.
+4.Default
+	IF we do not explicitly specify any access modifier for classes,methods,variables,etc then by default it is considered as default access modifier. 

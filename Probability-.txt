@@ -1,0 +1,50 @@
+Probability:-
+The Chance or likelihood of an event happening
+---> It lies b/w 0-1, and can never be negative.
+Sample space:- Number of possible outcomes
+
+formula --> p(a)/sample space
+
+Q-1 A marble is randomly selected from a box containing 5 green, 3 red, 7 blue
+find the probability that the marble is 
+1) Red --> 3/15 = 1/5
+2) Green --> 5/15
+3) Blue --> 7/15
+4) not red --> 12/15
+5) neither green nor blue --> 3/15
+6) green or red --> 8/15
+
+Q-2 A ticket is randomly selected from a basket containing 3 green, 4 yellow and 5 blue tickets determine the probability of getting 
+1) A green or yellow ticket --> 7/12
+2) An orange ticket --> 0/12
+3) neither yellow or blue ticket --> 9/12
+
+Q-3 in a class of 30 student 19 study physics 17 study chemistry and 15 study both draw a vein diagram.
+find the probability if the student is randomly selected, find the probavility that he chose...
+1) both subject ---> 15/30
+2) at least one of them --> 21/30
+3) Physics but not chemistry --> 4/30
+4) exactly one of the subject --> 6/30
+5) neither physics nor chemistry --> 9/30
+
+Q-4 the medical record of class of 30 student shows that 24 had previously measles, 12 previously had measles mums,26 have at least measles or mums p(aUb)
+ if a studnt is randomly is selected then find the probability that he or she has had 
+1) mums but not measles --> 2/30
+2) mums --> 14/30
+3) neither measles nor mums --> 4/30
+
+
+Q-5 in a class of 40 student 19 play tennis, 20 play football, 8 play neither play neither of this, a student is randomly selected then find the prob of
+1) play tennis -->19/40
+2) does not play football --> 12/40
+3) plays atleast one of the sport -->32/40
+4) play only and only one of the game -->25/40
+5) play football but not tennis -->13/40
+
+the ven diagram indicates the type of program shown a group of 40 individuals who watched something last night.
+10 people watched movie 
+1) sport
+2) drama & sport
+3) drama but not movie
+4) drama or a movie
+

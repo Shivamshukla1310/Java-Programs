@@ -1,0 +1,108 @@
+Multiple Classes, Constructors in java:-
+---> We Can Create More Than 1 Classes In Java however,we can include main function in only one class and the program name must be same as main class.
+
+Ex:-
+class a
+{
+	.
+	.
+	.
+}
+class b
+{
+	.
+	.
+	.
+}
+class c
+{
+	.
+	.
+	.
+}
+class Mainclass
+{
+	public static void main(String args[])
+	{
+		.
+		.
+		.
+	}
+}
+
+									JAVA CONSTRUCTORS
+
+---> A constructor in java is similar to a method that is invoked when an object of the class is created,
+---> A constructor has the same name as that of the class and does not have any return type, When the object is created the constructor is called 
+For Ex:-
+class ConstructorEx
+{
+	ConstructorEx()
+	{
+		System.out.println("Inside Constructor");
+	}
+	
+	public static void main(String args[])
+	{	
+		ConstructorEx constr = new ConstructorEx();
+	}
+}
+
+Types Of Constructors:-
+---> In JAva Constructors Can Be divided into three types
+1. No argument constructor
+2. Parameterized constructor
+3. Default Constructor
+
+No Argument Constructor:-
+---> Similar to methods a java constructor may or may not have any parameter or argument, if a constructor does not accept any parameter than it is called as no argument constructor.
+---> If we declare a constructor private,then it cannot be accessed from outside the class. So creating objects from outside the class is not possible using the private constructor.
+
+Parameterized Constructor:-
+---> a java constructor which accepts more than one or one parameters is called parameterized constructor.
+
+class ConstructorEx
+{
+	String p;
+	CosnstructorEx(String s)
+	{
+		p = s;
+		System.out.println(p);
+	}
+	public static void main(String args[])
+	{
+			ConstructorEx cons = new ConstructorEx("Java");
+	}
+}
+
+Default Constructor
+
+---> If we Do not create any constructor than the java compiler automatically creates no argument constructor during the execution of the program, this is default constructor
+
+class ConstructorEx
+{
+	int num;
+	boolean value;
+	public static void main(String args[])
+	{
+		ConstructorEx cons = new ConstructorEx();
+		System.out.println(cons.num);
+		System.out.println(cons.value);
+
+	}	
+}
+
+---> The default constructor initialize any uninitialized with default valu
+es as given below
+	Type  						Default Value
+1.	Int						0
+2.	Byte						0
+3. 	Short						0
+4. 	Long						0L
+5. 	Float						0.0f
+6.	Double						0.0d
+7.	Boolean						False
+8. 	Char						\u0000
+9.	Object						Reference NULL
+
+
