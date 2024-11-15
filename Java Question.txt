@@ -1,0 +1,7 @@
+/*
+1.Write Java Program to create a method that takes an integer as a parameter and throws an exception if the number is odd 
+2.Write java program to input integers and store it in an array if the numbers are duplicates then an exception must be thrown 
+3.Write java program to create a method that takes a string as an input and throws an exception if the string does not contain vowels
+4.Create a class department which consist of a method display courses that prints this are the departments courses the department class has 2 subclasses computer science and mechanical engineering each having a method with the same name that prints specific courses fir the respective departments call the method by creating an object of each of the 3 classes
+5.Write a java program to create 2 classes named as parent and child the parent class consist of the method named as add which adds 2 numbers, create 2 methods inside child class which will take 2 parameters as input and print the sum,multiplication and sum of their squares.
+*/

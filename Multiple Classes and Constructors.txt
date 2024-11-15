@@ -95,7 +95,7 @@ class ConstructorEx
 ---> The default constructor initialize any uninitialized with default valu
 es as given below
 	Type  						Default Value
-1.	Int						0
+1.	Int							0
 2.	Byte						0
 3. 	Short						0
 4. 	Long						0L
