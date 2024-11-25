@@ -59,6 +59,7 @@ class Employee extends Person{
 	int employee_no;
 	float salary;
 	String dept_name;
+	@Override
 	void input()
 	{
 		super.input();

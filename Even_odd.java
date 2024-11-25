@@ -5,7 +5,8 @@
 	* Subtraction
 	* Multiplication 
 	* Division
-	input the number and operation from the user it should be a menu driven program*/
+	input the number and operation from the user it should be a menu driven program
+	*/
 
 import java.util.Scanner;
 class Even_odd
