@@ -72,7 +72,8 @@ Description: Remote control via app, voice assistant compatible.
 
 */
 
-import java.util.*;
+
+import java.util.Scanner;
 
 class Product{
     int product_no;
@@ -101,7 +102,8 @@ class Product{
 }
 
 
-class Cart{
+
+class Cart {
     private Product[] cartItems; // Array to store products in the cart
     private int[] quantities;    // Array to store quantities of each product
     private int cartSize;        // Tracks the number of items in the cart
@@ -112,6 +114,7 @@ class Cart{
         cartSize = 0;
     }
 
+    // This Is to add products to the cart 
     public void addProduct(Product product, int quantity) {
         for (int i = 0; i < cartSize; i++) {
             if (cartItems[i].product_no == product.product_no) {
@@ -130,26 +133,34 @@ class Cart{
         }
     }
 
-    public void removeProduct(int productNo) {
+    // This is to remove product from the cart
+    public void removeProduct(int productNo, int quantity) {
         for (int i = 0; i < cartSize; i++) {
             if (cartItems[i].product_no == productNo) {
-                System.out.println(cartItems[i].product_name + " removed from the cart.");
-                for (int j = i; j < cartSize - 1; j++) {
-                    cartItems[j] = cartItems[j + 1];
-                    quantities[j] = quantities[j + 1];
+                if (quantities[i] <= quantity) {
+                    System.out.println(cartItems[i].product_name + " completely removed from the cart.");
+                    // Shift products
+                    for (int j = i; j < cartSize - 1; j++) {
+                        cartItems[j] = cartItems[j + 1];
+                        quantities[j] = quantities[j + 1];
+                    }
+                    cartItems[cartSize - 1] = null;
+                    quantities[cartSize - 1] = 0;
+                    cartSize--;
+                } else {
+                    quantities[i] -= quantity;
+                    System.out.println(quantity + " of " + cartItems[i].product_name + " removed from the cart.");
                 }
-                cartItems[cartSize - 1] = null;
-                quantities[cartSize - 1] = 0;
-                cartSize--;
                 return;
             }
         }
-        System.out.println("Product not found in cart.");
+        System.out.println("Product not found in cart. Try again");
     }
 
+    // This is used to view cart items 
     public void viewCart() {
         if (cartSize == 0) {
-            System.out.println("Cart is empty.");
+            System.out.println("Cart is empty please add items.");
         } else {
             System.out.println("\nItems in Cart:");
             for (int i = 0; i < cartSize; i++) {
@@ -159,56 +170,54 @@ class Cart{
         }
     }
 
-   public void checkout() {
-    if (cartSize == 0) {
-        System.out.println("Cart is empty. Add items to checkout.");
-        return;
+    // This is used show the formatted bills
+    public void checkout() {
+        if (cartSize == 0) {
+            System.out.println("Cart is empty. Add items to checkout. Or You Can Just Exit The Cart");
+            return;
+        }
+
+        int total = 0;
+        System.out.println("\n--- Checkout ---\n");
+        System.out.println("Item\t\t\t\tQuantity\tPrice\t\tTotal");
+        System.out.println("-----------------------------------------------------------");
+
+        for (int i = 0; i < cartSize; i++) {
+            Product p = cartItems[i];
+            int price = quantities[i] * p.product_price;
+            // Format the output to align the columns
+            System.out.printf("%-25s\t%-8d\tRs.%-8d\tRs.%-8d\n", p.product_name, quantities[i], p.product_price, price);
+            total += price;
+        }
+
+        System.out.println("-----------------------------------------------------------");
+        System.out.println("Subtotal: Rs." + total);
+
+        // Apply discount
+        double discount = 0.0;
+        if (total > 50000) {
+            discount = total * 0.15;
+        } else if (total > 30000) {
+            discount = total * 0.10;
+        } else if (total > 20000) {
+            discount = total * 0.05;
+        }
+
+        if (discount > 0) {
+            System.out.printf("Discount: Rs.%.2f\n", discount);
+        }
+        total -= discount;
+
+        System.out.println("Grand Total: Rs." + total);
+        System.out.println("\nThank you for shopping, Please Come Again\n");
+        cartSize = 0; // Clears the cart after checkout
     }
-
-    int total = 0;
-    System.out.println("\n--- Checkout ---\n");
-    System.out.println("Item\t\tQuantity\tPrice\t\tTotal");
-    System.out.println("-----------------------------------------------");
-
-    for (int i = 0; i < cartSize; i++) {
-        Product p = cartItems[i];
-        int price = quantities[i] * p.product_price;
-        System.out.println(p.product_name + "\t" + quantities[i] + "\t\t" + p.product_price + "\t\t" + price);
-        total += price;
-    }
-
-    System.out.println("-----------------------------------------------");
-    System.out.println("Subtotal: Rs." + total);
-
-    // Apply discount
-    double discount = 0.0;
-    if (total > 50000) {
-        discount = total * 0.15;
-    } else if (total > 30000) {
-        discount = total * 0.10;
-    } else if (total > 20000) {
-        discount = total * 0.05;
-    }
-
-    if (discount > 0) {
-        System.out.printf("Discount: Rs.%.2f\n", discount);
-    }
-    total -= discount;
-
-    System.out.println("Grand Total: Rs." + total);
-    System.out.println("\nThank you for shopping!\n");
-    cartSize = 0; // Clear the cart after checkout
 }
-
-}
-
-
 
 class Shopping_Cart {
     public static void main(String args[]) {
         Scanner sc = new Scanner(System.in);
 
-        // Using Product Class As Data Type So That The values can be assigned to the array products.
         Product[] products = {
             new Product(1, "Smartphone", 15000, "6.5-inch display, 128GB storage, dual SIM."),
             new Product(2, "Laptop", 55000, "15.6-inch screen, 8GB RAM, 512GB SSD."),
@@ -265,7 +274,9 @@ class Shopping_Cart {
                 case 2:
                     System.out.print("Enter Product No to Remove: ");
                     int removeProductNo = sc.nextInt();
-                    cart.removeProduct(removeProductNo);
+                    System.out.print("Enter Quantity to Remove: ");
+                    int removeQuantity = sc.nextInt();
+                    cart.removeProduct(removeProductNo, removeQuantity);
                     break;
 
                 case 3:
@@ -277,7 +288,7 @@ class Shopping_Cart {
                     break;
 
                 case 5:
-                    System.out.println("Exiting. Thank you!");
+                    System.out.println("Exiting. Thank you Please Visit Again...");
                     break;
 
                 default:

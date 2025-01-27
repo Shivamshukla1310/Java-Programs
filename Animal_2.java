@@ -6,7 +6,6 @@ Write java program to implement single inheritance for the following
 3. Create a class named as bank account with fields acnt_number, balance and interest_rate and a method deposit that adds an amount to the balance create a ssub class savings_accnt that extends bank_accnt and adds a field minimum balance and a method withdraw that subtracts an amount from the balance create an object of bank occount class and call deposit method, create an object of savings account and call the method deposit and withdraw.
 
 Multilevel inheritance:-
-
 1. Create a class person with fields name and age and a method display that prints the name and age of a person, Create a subclass employee that extends person and adds field salary and a method display that prints the name,age, and salary of an employee,Create a sub class manager that extends employee and adds a field dept_name and a method display that prints name,age,salary and department of the manager, create an object of a person class and call display method and create an object of employee class and call display method then create manager then call display method.
 
 Method Overriding:-
