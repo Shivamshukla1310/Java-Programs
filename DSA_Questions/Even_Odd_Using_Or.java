@@ -17,4 +17,4 @@ class Even_Odd_Using_Or
             System.out.println("Number Is Odd");
         }
     }
-}
+}       

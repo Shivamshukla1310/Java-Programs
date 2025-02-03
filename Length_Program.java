@@ -12,6 +12,5 @@ class Length_Program
         String trim = concati.trim();
         System.out.println(len);
         System.out.println(trim);
-
     }
 }
