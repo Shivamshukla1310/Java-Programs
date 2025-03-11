@@ -1,7 +1,7 @@
 import java.util.Stack;
 
 public class Infix_to_postfix{
-    private static int precedence(chr op){
+    private static int precedence(char op){
         switch(op){
             case '+':
             case '-':
@@ -17,25 +17,44 @@ public class Infix_to_postfix{
     }
 
     public static String Infix_to_postfix(String infix){
-        StrinfBuilder postfix = new StrinfBuilder();
+        StringBuilder postfix = new StringBuilder();
         Stack<Character> stack = new Stack<>();
 
-        for(int i = 0; j < infix.length(); i++){
+        for(int i = 0; i < infix.length(); i++){
             char ch = infix.charAt(i);
             if(Character.isLetterOrDigit(ch)){
                 postfix.append(ch);
             }
 
-            else if (ch == ("(")){
+            else if (ch == '('){
                 stack.push(ch);
             }
 
-            else if (ch == (")")){
-                while (!stack.isEmpty() && stack.peek() != ("(")){
+            else if (ch == ')'){
+                while (!stack.isEmpty() && stack.peek() != '('){
                     postfix.append(stack.pop());
                 }
-                stack.pop()
+                stack.pop();
+            }
+
+            else{
+                while(!stack.isEmpty() && precedence(stack.peek()) >= precedence(ch)){
+                    postfix.append(stack.pop());
+                }
+                stack.push(ch);
             }
         }
+
+        while(!stack.isEmpty()){
+            postfix.append(stack.pop());
+        }
+
+        return postfix.toString();
+    }
+
+    public static void main(String args[]){
+        String infix = "A+(B*C-(D/E^F)*G)*H";
+        System.out.println("infix Expression: " + infix);
+        System.out.println("Postfix Expression: " + Infix_to_postfix(infix));    
     }
 }
