@@ -1,6 +1,12 @@
 import java.util.Stack;
 
 public class Infix_to_postfix{
+    public static void main(String args[]){
+        String infix = "A+(B*C-(D/E^F)*G)*H";
+        System.out.println("infix Expression: " + infix);
+        System.out.println("Postfix Expression: " + Infix_to_postfix(infix));    
+    }
+    
     private static int precedence(char op){
         switch(op){
             case '+':
@@ -52,9 +58,4 @@ public class Infix_to_postfix{
         return postfix.toString();
     }
 
-    public static void main(String args[]){
-        String infix = "A+(B*C-(D/E^F)*G)*H";
-        System.out.println("infix Expression: " + infix);
-        System.out.println("Postfix Expression: " + Infix_to_postfix(infix));    
-    }
 }

@@ -16,5 +16,8 @@ class Add_num
 		System.out.println(num1 + "-" + num2 + "=" + sub);
 		System.out.println(num1 + "*" + num2 + "=" + mul);
 		System.out.println(num1 + "/" + num2 + "=" + div);
+
+		String sc = "Programming";
+		System.out.println(sc.substring(3,8));
 	}
 }
