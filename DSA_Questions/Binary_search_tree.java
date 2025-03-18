@@ -99,7 +99,7 @@ class BST {
     }
 }
 
-public class Main {
+public class Binary_search_tree {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         BST bst = new BST();
