@@ -1,3 +1,37 @@
+/* You need to implement a Binary Search Tree (BST) that allows the user to perform the following operations:
+
+Insert X → Insert an element X into the BST.
+Delete X → Delete the element X from the BST. If X is not present, do nothing.
+Height → Print the height of the BST.
+Inorder → Display the tree using Inorder Traversal (Left, Root, Right).
+The program should allow multiple operations at runtime, and the user can input commands interactively.
+
+Input Format:
+An integer N, representing the number of operations.
+Each of the next N lines contains an operation:
+"1 X" → Insert X into the BST.
+"2 X" → Delete X from the BST.
+"3" → Print the height of the BST.
+"4" → Print the Inorder traversal of the BST.
+Output Format:
+Print messages based on operations:
+The height of the BST when queried.
+The Inorder traversal of the BST.
+For example:
+
+Input	Result
+7       1
+1 50    20 50 70
+1 30
+1 70
+1 20
+2 30
+3
+4
+
+20 50 70
+*/
+
 import java.util.Scanner;
 
 class Node {
