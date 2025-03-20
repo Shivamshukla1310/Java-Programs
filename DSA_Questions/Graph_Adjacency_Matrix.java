@@ -21,3 +21,32 @@ Input	Result
 2 3     0 1 0 0
 4 1     1 0 0 0
 */
+
+import java.util.Scanner;
+
+public class GraphAdjMatrix {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int N = scanner.nextInt();
+        int E = scanner.nextInt();
+
+        int[][] adjMatrix = new int[N][N];
+
+        for (int i = 0; i < E; i++) {
+            int U = scanner.nextInt() - 1;
+            int V = scanner.nextInt() - 1;
+            adjMatrix[U][V] = 1;
+            adjMatrix[V][U] = 1;
+        }
+
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++) {
+                System.out.print(adjMatrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+        scanner.close();
+    }
+}
