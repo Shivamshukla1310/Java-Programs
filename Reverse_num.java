@@ -7,9 +7,9 @@ class Reverse_num{
         int a = sc.nextInt();
         int rev = 0;
         int temp = a;
-        while(temp == 0){
+        while(temp > 0){
             int digit = temp % 10;
-            rev = rev * 10 + digit;
+            rev = (rev * 10) + digit;
             temp = temp / 10;
         }
         System.out.println("Reverse Num: " + rev);
