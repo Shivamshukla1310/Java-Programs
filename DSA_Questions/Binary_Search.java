@@ -11,7 +11,13 @@ class Binary_Search{
         for(int i = 0; i < n; i++){
             arr[i] = sc.nextInt();
         }
+        
+        int target = sc.nextInt();
 
-        int 
+        int start = 0;
+        int end = n - 1;
+
+        
+
     }
 }
