@@ -1,3 +1,10 @@
+// So here we take a array with n elements so we check the array in left side and the greater value is to be repalaced if found any
+
+// arr = [2,5,3,8,9,5,3,2]
+// arr2 = [-1,2,3,3,8,9,9,9,9]
+
+// so here the problem is like before 2 there where no number so we ste it -1 and then go further
+
 import java.util.*;
 class Find_Maximum{
     public static void main(String args[]){
