@@ -18,7 +18,7 @@ class Find_Maximum{
             System.out.print("Num" + i + ":");
             arr[i] = sc.nextInt();
         }
-        arr2[0] = arr[0];
+        arr2[n - 1] = -1;
 
         // for(int i = 1; i < n; i++){
         //     int max = arr[0];
@@ -31,7 +31,7 @@ class Find_Maximum{
         // }
         
         int max = arr[n - 1];
-        for(int i = n - 1; i >= 1; i--){
+        for(int i = n - 2; i >= 1; i--){
             arr2[i] = max;
             max = Math.max(max,arr[i]);
         }
